@@ -10,7 +10,7 @@ class EventListItem extends Component {
               <Segment>
                 <Item.Group>
                   <Item>
-                    <Item.Image size="tiny" circular src="https://randomuser.me/api/portraits/women/40.jpg" />
+                    <Item.Image size="tiny" circular='true' src="https://randomuser.me/api/portraits/women/40.jpg" />
                     <Item.Content>
                       <Item.Header as="a">Event Title</Item.Header>
                       <Item.Description>
