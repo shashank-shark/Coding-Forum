@@ -5,16 +5,19 @@ import EventListAttendee from '../EventList/EventListAteendee'
 
 class EventListItem extends Component {
   render() {
+
+    const { event } = this.props;
+
     return (
            <Segment.Group>
               <Segment>
                 <Item.Group>
                   <Item>
-                    <Item.Image size="tiny" circular='true' src="https://randomuser.me/api/portraits/women/40.jpg" />
+                    <Item.Image size="tiny" circular={true} src={event.hostPhotoURL} />
                     <Item.Content>
-                      <Item.Header as="a">Event Title</Item.Header>
+                      <Item.Header as="a">{event.title}</Item.Header>
                       <Item.Description>
-                        Hosted by <a href='#simple'>hosted by</a>
+                        Hosted by <a href='#simple'>{event.hostedBy}</a>
                       </Item.Description>
                     </Item.Content>
                   </Item>
@@ -22,8 +25,8 @@ class EventListItem extends Component {
               </Segment>
               <Segment>
                 <span>
-                  <Icon name="clock" /> date |
-                  <Icon name="marker" /> time
+                  <Icon name="clock" /> {event.date} |
+                  <Icon name="marker" /> {event.venue}
                 </span>
               </Segment>
               <Segment secondary>
@@ -35,6 +38,7 @@ class EventListItem extends Component {
                 </List>
               </Segment>
               <Segment clearing>
+                <span>{event.description}</span>
                 <Button as="a" color="teal" floated="right" content="View" />
               </Segment>
             </Segment.Group>
